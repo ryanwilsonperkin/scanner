@@ -48,8 +48,43 @@ char match_int(char *str)
 
 char match_hex(char *str)
 {
-        char match = 0;
-        return match;
+        int i;
+        int length = strlen(str);
+        char c;
+        char state = 0;
+        const char accept_state = 3;
+        for(i = 0; i < length; i++) {
+                c = str[i];
+                switch (state) {
+                case 0:
+                        if (c == '0') {
+                                state = 1;
+                        } else {
+                                return 0;
+                        }
+                        break;
+                case 1:
+                        if (c == 'x') {
+                                state = 2;
+                        } else {
+                                return 0;
+                        }
+                        break;
+                case 2:
+                        if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F')) {
+                                state = 3;
+                        } else {
+                                return 0;
+                        }
+                        break;
+                case 3:
+                        if (!((c >= '0' && c <= '9') ||
+                                        (c >= 'A' && c <= 'F'))) {
+                                return 0;
+                        }
+                }
+        }
+        return (state == accept_state);
 }
 
 char match_oct(char *str)
