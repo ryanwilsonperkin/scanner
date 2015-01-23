@@ -48,16 +48,27 @@ int is_whitespace(char c)
 
 enum Token recognize_token(char *str)
 {
-        if (match_int(str)) return INT;
-        else if (match_hex(str)) return HEX;
-        else if (match_oct(str)) return OCT;
-        else if (match_real(str)) return REAL;
-        else if (match_lparen(str)) return LPAREN;
-        else if (match_rparen(str)) return RPAREN;
-        else if (match_car(str)) return CAR;
-        else if (match_cdr(str)) return CDR;
-        else if (strlen(str) == 1) return CHAR;
-        else return STR;
+        if (match_int(str)) {
+                return INT;
+        } else if (match_hex(str)) {
+                return HEX;
+        } else if (match_oct(str)) {
+                return OCT;
+        } else if (match_real(str)) {
+                return REAL;
+        } else if (match_lparen(str)) {
+                return LPAREN;
+        } else if (match_rparen(str)) {
+                return RPAREN;
+        } else if (match_car(str)) {
+                return CAR;
+        } else if (match_cdr(str)) {
+                return CDR;
+        } else if (strlen(str) == 1) {
+                return CHAR;
+        } else {
+                return STR;
+        }
 }
 
 int main()
