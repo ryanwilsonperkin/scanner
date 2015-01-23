@@ -156,6 +156,8 @@ char match_real(char *str)
                 case 2:
                         if (c == '.') {
                                 state = 4;
+                        } else if (c == 'e' || c == 'E') {
+                                state = 6;
                         } else {
                                 return 0;
                         }
@@ -163,6 +165,8 @@ char match_real(char *str)
                 case 3:
                         if (c == '.') {
                                 state = 4;
+                        } else if (c == 'e' || c == 'E') {
+                                state = 6;
                         } else if (!(c >= '0' && c <= '9')) {
                                 return 0;
                         }
