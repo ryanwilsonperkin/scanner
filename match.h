@@ -1,6 +1,21 @@
 #ifndef MATCH_SCANNER_H
 #define MATCH_SCANNER_H
 
+enum Token {
+        INT,
+        HEX,
+        OCT,
+        REAL,
+        LPAREN,
+        RPAREN,
+        CAR,
+        CDR,
+        CHAR,
+        STR
+};
+
+enum Token recognize_token(char *str);
+
 char match_int(char *str);
 char match_hex(char *str);
 char match_oct(char *str);
