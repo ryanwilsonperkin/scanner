@@ -255,12 +255,78 @@ char match_rparen(char *str)
 
 char match_car(char *str)
 {
-        char match = 0;
-        return match;
+        int i;
+        int length = strlen(str);
+        char c;
+        char state = 0;
+        const char accept_state = 3;
+        for(i = 0; i < length; i++) {
+                c = str[i];
+                switch(state) {
+                case 0:
+                        if (c == 'c') {
+                                state = 1;
+                        } else {
+                                return 0;
+                        }
+                        break;
+                case 1:
+                        if (c == 'a') {
+                                state = 2;
+                        } else {
+                                return 0;
+                        }
+                        break;
+                case 2:
+                        if (c == 'r') {
+                                state = 3;
+                        } else {
+                                return 0;
+                        }
+                        break;
+                case 3:
+                        return 0;
+                        break;
+                }
+        }
+        return (state == accept_state);
 }
 
 char match_cdr(char *str)
 {
-        char match = 0;
-        return match;
+        int i;
+        int length = strlen(str);
+        char c;
+        char state = 0;
+        const char accept_state = 3;
+        for(i = 0; i < length; i++) {
+                c = str[i];
+                switch(state) {
+                case 0:
+                        if (c == 'c') {
+                                state = 1;
+                        } else {
+                                return 0;
+                        }
+                        break;
+                case 1:
+                        if (c == 'd') {
+                                state = 2;
+                        } else {
+                                return 0;
+                        }
+                        break;
+                case 2:
+                        if (c == 'r') {
+                                state = 3;
+                        } else {
+                                return 0;
+                        }
+                        break;
+                case 3:
+                        return 0;
+                        break;
+                }
+        }
+        return (state == accept_state);
 }
