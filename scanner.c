@@ -4,7 +4,7 @@
 #include "match.h"
 #include "scanner.h"
 
-#define LEXEME_SIZE 1024
+#define MAX_LEXEME_SIZE 1024
 
 void emit_token(enum Token tok)
 {
@@ -65,7 +65,7 @@ int main()
 {
         char c;
         char reading_lexeme = 0;
-        char *lexeme = malloc(LEXEME_SIZE);
+        char *lexeme = malloc(MAX_LEXEME_SIZE);
         size_t lexeme_len = 0;
         while (!feof(stdin)) {
                 c = getchar();
@@ -73,7 +73,7 @@ int main()
                         if (reading_lexeme) {
                                 reading_lexeme = 0;
                                 emit_token(recognize_token(lexeme));
-                                memset(lexeme, 0, LEXEME_SIZE);
+                                memset(lexeme, 0, MAX_LEXEME_SIZE);
                                 lexeme_len = 0;
                         } else {
                                 continue;
