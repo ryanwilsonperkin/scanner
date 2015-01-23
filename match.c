@@ -222,7 +222,6 @@ char match_lparen(char *str)
                         break;
                 case 1:
                         return 0;
-                        break;
                 }
         }
         return (state == accept_state);
@@ -247,7 +246,6 @@ char match_rparen(char *str)
                         break;
                 case 1:
                         return 0;
-                        break;
                 }
         }
         return (state == accept_state);
@@ -286,7 +284,6 @@ char match_car(char *str)
                         break;
                 case 3:
                         return 0;
-                        break;
                 }
         }
         return (state == accept_state);
@@ -325,7 +322,6 @@ char match_cdr(char *str)
                         break;
                 case 3:
                         return 0;
-                        break;
                 }
         }
         return (state == accept_state);
