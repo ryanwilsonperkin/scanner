@@ -94,4 +94,5 @@ int main()
                         lexeme[++lexeme_len] = '\0';
                 }
         }
+        return 0;
 }
