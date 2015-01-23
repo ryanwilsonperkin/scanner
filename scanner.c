@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include "match.h"
 #include "scanner.h"
@@ -65,7 +64,7 @@ int main()
 {
         char c;
         char reading_lexeme = 0;
-        char *lexeme = malloc(MAX_LEXEME_SIZE);
+        char lexeme[MAX_LEXEME_SIZE] = {0};
         size_t lexeme_len = 0;
         while (!feof(stdin)) {
                 c = getchar();
