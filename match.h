@@ -10,4 +10,4 @@ char match_rparen(char *str);
 char match_car(char *str);
 char match_cdr(char *str);
 
-#endif  // MATCH_SCANNER_H
+#endif  /* MATCH_SCANNER_H */
