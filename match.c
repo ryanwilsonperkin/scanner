@@ -205,14 +205,52 @@ char match_real(char *str)
 
 char match_lparen(char *str)
 {
-        char match = 0;
-        return match;
+        int i;
+        int length = strlen(str);
+        char c;
+        char state = 0;
+        const char accept_state = 1;
+        for(i = 0; i < length; i++) {
+                c = str[i];
+                switch(state) {
+                case 0:
+                        if (c == '(') {
+                                state = 1;
+                        } else {
+                                return 0;
+                        }
+                        break;
+                case 1:
+                        return 0;
+                        break;
+                }
+        }
+        return (state == accept_state);
 }
 
 char match_rparen(char *str)
 {
-        char match = 0;
-        return match;
+        int i;
+        int length = strlen(str);
+        char c;
+        char state = 0;
+        const char accept_state = 1;
+        for(i = 0; i < length; i++) {
+                c = str[i];
+                switch(state) {
+                case 0:
+                        if (c == ')') {
+                                state = 1;
+                        } else {
+                                return 0;
+                        }
+                        break;
+                case 1:
+                        return 0;
+                        break;
+                }
+        }
+        return (state == accept_state);
 }
 
 char match_car(char *str)
