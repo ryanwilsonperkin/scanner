@@ -10,9 +10,9 @@ enum Token recognize_token(char *str)
         int transition;
         int length = strlen(str);
         short state = 0;
-        short transitions[NUM_STATES + 1][255]; 
+        short transitions[NUM_STATES + 1][256]; 
 
-        for (i = 0; i < 255; i++) {
+        for (i = 0; i < 256; i++) {
                 transitions[0][i] = 7;
                 for (j = 1; j < NUM_STATES + 1; j++) {
                         transitions[j][i] = REJECT_STATE;
