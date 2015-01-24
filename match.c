@@ -3,14 +3,17 @@
 
 enum Token recognize_token(char *str)
 {
-        int i;
+        int i, j;
         int transition;
         int length = strlen(str);
         short state = 0;
-        short transitions[20][255] = {{-1}};
+        short transitions[22][255]; 
 
         for (i = 0; i < 255; i++) {
                 transitions[0][i] = 7;
+                for (j = 1; j < 22; j++) {
+                        transitions[j][i] = 21;
+                }
         }
         transitions[0]['-'] = 1;
         transitions[0]['0'] = 2;
@@ -46,6 +49,7 @@ enum Token recognize_token(char *str)
         transitions[2]['7'] = 10;
         transitions[2]['x'] = 11;
         transitions[2]['X'] = 11;
+        transitions[2]['.'] = 17;
         transitions[3]['0'] = 3;
         transitions[3]['1'] = 3;
         transitions[3]['2'] = 3;
