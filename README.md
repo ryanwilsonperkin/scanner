@@ -59,10 +59,10 @@ Corresponding regular expression: `cdr`
 
 Description: *any other single ASCII character*
 
-Corresponding regular expression: `.`
+Corresponding regular expression: `[^\(\)01-9]`
 
 ###STR
 
 Description: *any other sequence of (more than 1) ASCII characters*
 
-Corresponding regular expression: `..+`
+Rather than a regular expression for matching STR tokens, the token is found when the DFA is not in an accept state for any of the above tokens.
