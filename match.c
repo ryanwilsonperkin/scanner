@@ -1,18 +1,21 @@
 #include <string.h>
 #include "match.h"
 
+#define NUM_STATES 21
+#define REJECT_STATE 21
+
 enum Token recognize_token(char *str)
 {
         int i, j;
         int transition;
         int length = strlen(str);
         short state = 0;
-        short transitions[22][255]; 
+        short transitions[NUM_STATES + 1][255]; 
 
         for (i = 0; i < 255; i++) {
                 transitions[0][i] = 7;
-                for (j = 1; j < 22; j++) {
-                        transitions[j][i] = 21;
+                for (j = 1; j < NUM_STATES + 1; j++) {
+                        transitions[j][i] = REJECT_STATE;
                 }
         }
         transitions[0]['-'] = 1;
