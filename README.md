@@ -3,6 +3,8 @@ scanner
 
 A simple lexical scanner.
 
+Scanner parses `stdin` for lexemes and emits matching tokens on `stdout` (possible tokens are defined in the following section). Lexemes are delimited by whitespace which is defined to be any spaces, tabs, or newlines. For simplicity's sake, lexemes are limited to 1024 characters.
+
 Tokens
 ---
 
