@@ -206,6 +206,8 @@ enum Token recognize_token(char *str)
                 return CAR;
         case 16:
                 return CDR;
+        case 1:
+        case 6:
         case 7:
                 return CHAR;
         default:
