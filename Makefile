@@ -1,13 +1,13 @@
-CFLAGS= -Wall -g
+CC=gcc
+CFLAGS=-Wall -g
+OBJS=scanner.o match.o
+PROGNAME=scanner
 
-all: scanner match
-	gcc scanner.o match.o -o scanner
+all: $(OBJS)
+	$(CC) $(OBJS) -o $(PROGNAME)
 
-scanner: scanner.c
-	gcc $(CFLAGS) -c scanner.c
-
-match: match.c
-	gcc $(CFLAGS) -c match.c
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
 	rm *.o
