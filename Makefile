@@ -3,7 +3,9 @@ CFLAGS=-Wall -g
 OBJS=scanner.o match.o
 PROGNAME=scanner
 
-all: $(OBJS)
+all: scanner
+
+scanner: $(OBJS)
 	$(CC) $(OBJS) -o $(PROGNAME)
 
 %.o: %.c
