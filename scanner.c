@@ -6,8 +6,16 @@
 #include <string.h>
 #include "match.h"
 
+/* Maximum size of lexeme read from stdin */
 #define MAX_LEXEME_SIZE 1024
 
+/*
+ * emit_token
+ * Prints the name of the token
+ *
+ * Accepts:
+ *      tok: The token whose name to print
+ */
 void emit_token(enum Token tok)
 {
         switch(tok) {
@@ -44,11 +52,25 @@ void emit_token(enum Token tok)
         }
 }
 
+/*
+ * is_whitespace
+ * Determines whether a character is a form of whitespace
+ * Matches spaces, tabs, and newline characters
+ *
+ * Accepts:
+ *      c: the character to check
+ *
+ * Returns: non-zero if c is whitespace, zero otherwise
+ */
 int is_whitespace(char c)
 {
         return c == ' ' || c == '\n' || c == '\t';
 }
 
+/*
+ * main
+ * Reads lexems from stdin until EOF, emitting parsed tokens to stdout
+ */
 int main()
 {
         char c;

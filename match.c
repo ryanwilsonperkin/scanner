@@ -5,9 +5,22 @@
 #include <string.h>
 #include "match.h"
 
+/* Number of possible states in the state machine */
 #define NUM_STATES 21
+
+/* State number used for rejection (ie. always match STR token) */
 #define REJECT_STATE 21
 
+/*
+ * recognize_token
+ * Matches string to associated token type
+ * Uses a state-based transition table as a DFA to match tokens
+ *
+ * Accepts:
+ *      str: lexeme string to match as token type
+ * 
+ * Returns: Token type that matched the string
+ */
 enum Token recognize_token(char *str)
 {
         int i, j;

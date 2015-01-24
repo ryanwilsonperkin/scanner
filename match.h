@@ -5,6 +5,7 @@
 #ifndef MATCH_SCANNER_H
 #define MATCH_SCANNER_H
 
+/* List of all possible token types */
 enum Token {
         INT,
         HEX,
@@ -18,6 +19,10 @@ enum Token {
         STR
 };
 
+/*
+ * recognize_token
+ * Matches string to associated token type
+ */
 enum Token recognize_token(char *str);
 
 #endif  /* MATCH_SCANNER_H */
