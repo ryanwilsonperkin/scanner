@@ -1,3 +1,7 @@
+/*
+ * match.h
+ * A simple state based token matcher
+ */
 #ifndef MATCH_SCANNER_H
 #define MATCH_SCANNER_H
 

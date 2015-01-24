@@ -1,3 +1,7 @@
+/*
+ * match.c
+ * A simple state based token matcher
+ */
 #include <string.h>
 #include "match.h"
 

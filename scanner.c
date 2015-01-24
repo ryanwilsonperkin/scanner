@@ -1,3 +1,7 @@
+/*
+ * scanner.c
+ * A tool for parsing stdin and emitting tokens on stdout
+ */
 #include <stdio.h>
 #include <string.h>
 #include "match.h"
