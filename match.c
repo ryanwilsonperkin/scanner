@@ -68,15 +68,6 @@ enum Token recognize_token(char *str)
         transitions[3]['E'] = 19;
         transitions[6]['a'] = 12;
         transitions[6]['d'] = 13;
-        transitions[8]['1'] = 9;
-        transitions[8]['2'] = 9;
-        transitions[8]['3'] = 9;
-        transitions[8]['4'] = 9;
-        transitions[8]['5'] = 9;
-        transitions[8]['6'] = 9;
-        transitions[8]['7'] = 9;
-        transitions[8]['8'] = 9;
-        transitions[8]['9'] = 9;
         transitions[8]['.'] = 17;
         transitions[8]['e'] = 19;
         transitions[8]['E'] = 19;
